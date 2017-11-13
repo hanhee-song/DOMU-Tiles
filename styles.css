@@ -1,10 +1,25 @@
+html {
+  background: linear-gradient(-45deg, #4c5066, #15161c);
+  background: -webkit-linear-gradient(-45deg, #4c5066, #15161c);
+  background: -moz-linear-gradient(-45deg, #4c5066, #15161c);
+  height: 100%;
+  font-family: 'Inconsolata', monospace;
+}
 
+.title {
+  margin-top: 100px;
+  margin-bottom: 20px;
+  font-size: 74px;
+  text-align: center;
+  color: #ddd;
+}
 
 .board {
-  background-color: #6a7384;
+  margin: 0 auto;
+  background-color: #555;
   width: 500px;
   height: 500px;
-  border: 1px solid black;
+  border: 1px solid #222;
   display: flex;
   flex-wrap: wrap;
 }
@@ -13,10 +28,14 @@
   box-sizing: border-box;
 }
 
+.square-container {
+  border: 1px solid #222;
+}
+
 .square {
-  width: 100px;
-  height: 100px;
-  border: 1px solid black;
+  width: 98px;
+  height: 98px;
+  border: 1px solid #222;
   background-color: #c49c25;
   -webkit-transition: .1s;
   transition: .1s;

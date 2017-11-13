@@ -4,19 +4,22 @@ u(() => {
   const board = u(".board");
   for (var i = 0; i < 5; i++) {
     for (var j = 0; j < 5; j++) {
-      const div = u(document.createElement("div"));
-      div.addClass(`c${i}${j}`);
-      div.attr("x", i);
-      div.attr("y", j);
-      div.addClass("square");
+      const squareContainer = u(document.createElement("div"));
+      squareContainer.addClass("square-container");
+      const square = u(document.createElement("div"));
+      square.addClass(`c${i}${j}`);
+      square.attr("x", i);
+      square.attr("y", j);
+      square.addClass("square");
       if (Math.floor(Math.random()*2)) {
-        div.addClass("flipped");
+        square.addClass("flipped");
       }
-      board.append(div);
+      squareContainer.append(square);
+      board.append(squareContainer);
     }
   }
   
-  board.children().on("click", flipMainSquare);
+  board.children().children().on("click", flipMainSquare);
 });
 
 const ADJACENT = [
@@ -34,11 +37,14 @@ const flipMainSquare = (e) => {
   ADJACENT.forEach((coords) => {
     flipSquare(parseInt(x) + coords[0], parseInt(y) + coords[1]);
   });
+  setTimeout(function () {
+    checkWin();
+  }, 210);
 };
 
 const flipSquare = (x, y) => {
   const board = u(".board");
-  const square = board.find(`.c${x}${y}`);
+  const square = board.children().find(`.c${x}${y}`);
   square.addClass("flip-in");
   setTimeout(function () {
     square.removeClass("flip-in");
@@ -46,8 +52,25 @@ const flipSquare = (x, y) => {
     setTimeout(function () {
       square.removeClass("flip-out");
       square.toggleClass("flipped");
+      
     }, 100);
   }, 100);
+};
+
+const checkWin = () => {
+  let flipped = 0;
+  u(".square").each((square) => {
+    if (u(square).attr("class").includes("flipped")) {
+      flipped += 1;
+    }
+  });
+  if (flipped === 25 || flipped === 0) {
+    
+    const board = u(".board");
+    board.children().children().off("click");
+  }
+  
+  
 };
 
 },{}]},{},[1]);

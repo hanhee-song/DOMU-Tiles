@@ -35,7 +35,6 @@ class DOMNodeCollection {
       });
     } else if (argument instanceof HTMLElement) {
       this.each((el) => {
-        debugger;
         el.append(argument.cloneNode(true));
       });
     } else if (argument instanceof DOMNodeCollection) {
