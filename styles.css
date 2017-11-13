@@ -1,0 +1,23 @@
+
+
+.board {
+  width: 500px;
+  height: 500px;
+  border: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.board * {
+  box-sizing: border-box;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+}
+
+.flipped {
+  background-color: black;
+}
