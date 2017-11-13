@@ -19,6 +19,19 @@ u(() => {
   }
   
   board.children().children().on("click", flipMainSquare);
+  
+  const instructionsContainer = u(document.createElement("div"));
+  instructionsContainer.addClass("instructions-message");
+  const instructions = u(document.createElement("div"));
+  instructions.append("Welcome to DOMU-Tiles! <br />");
+  instructions.append("Click on a square to flip the square and its neighbors. <br />");
+  instructions.append("Turn the whole board one color to win! <br />");
+  instructions.append("Click to get started! <br />");
+  instructionsContainer.append(instructions);
+  board.append(instructionsContainer);
+  u("html").on("click", () => {
+    u(".instructions-message").empty();
+  });
 });
 
 const ADJACENT = [
@@ -67,6 +80,10 @@ const checkWin = () => {
     
     const board = u(".board");
     board.children().children().off("click");
+    const winMessage = u(document.createElement("div"));
+    winMessage.addClass("win-message");
+    winMessage.append("You win! Congrats!");
+    board.append(winMessage);
   }
   
   
