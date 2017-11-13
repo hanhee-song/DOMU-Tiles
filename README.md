@@ -1,6 +1,6 @@
 # DOMU-Tiles
 
-![example image](docs/example.png)
+<img src="docs/example.png" width="300px" />
 
 DOMU-Tiles is a simple demonstration of [DOMU](https://github.com/hanhee-song/DOMU), a JavaScript library that streamlines DOM interactions.
 
