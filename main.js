@@ -38,5 +38,13 @@ const flipMainSquare = (e) => {
 const flipSquare = (x, y) => {
   const board = u(".board");
   const square = board.find(`.c${x}${y}`);
-  square.toggleClass("flipped");
+  square.addClass("flip-in");
+  setTimeout(function () {
+    square.removeClass("flip-in");
+    square.addClass("flip-out");
+    setTimeout(function () {
+      square.removeClass("flip-out");
+      square.toggleClass("flipped");
+    }, 100);
+  }, 100);
 };
