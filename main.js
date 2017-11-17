@@ -21,18 +21,25 @@ u(() => {
   board.children().children().on("click", flipMainSquare);
   
   const instructionsContainer = u(document.createElement("div"));
-  instructionsContainer.addClass("instructions-message");
+  instructionsContainer.addClass("instructions-container");
+  board.append(instructionsContainer);
+  showInstructions();
+});
+
+function showInstructions() {
+  const instructionsContainer = u(".instructions-container");
   const instructions = u(document.createElement("div"));
+  instructions.addClass("instructions-message");
+  const board = u(".board");
   instructions.append("Welcome to DOMU-Tiles! <br />");
   instructions.append("Click on a square to flip the square and its neighbors. <br />");
   instructions.append("Turn the whole board one color to win! <br />");
   instructions.append("Click to get started! <br />");
   instructionsContainer.append(instructions);
-  board.append(instructionsContainer);
-  u("html").on("click", () => {
-    u(".instructions-message").empty();
+  instructionsContainer.on("click", () => {
+    u(".instructions-container").empty();
   });
-});
+}
 
 const ADJACENT = [
   [0, 0],
