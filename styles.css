@@ -78,8 +78,38 @@ html {
   color: #ddd;
 }
 
+.instructions-button-container {
+  width: 500px;
+  position: relative;
+  /*height: 0;*/
+  margin: 0 auto;
+}
+
+.instructions-button {
+  cursor: pointer;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 5px;
+  right: 5px;
+  z-index: 1;
+  text-align: center;
+  line-height: 20px;
+  font-size: 18px;
+  font-weight: 900;
+  color: #4c5066;
+  border: 3px solid #4c5066;
+  border-radius: 50%;
+}
+
+.instructions-button:hover {
+  color: #7987af;
+  border: 3px solid #7987af;
+}
+
 .instructions-container {
   position: absolute;
+  z-index: 2;
 }
 
 .instructions-message {

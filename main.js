@@ -24,6 +24,10 @@ u(() => {
   instructionsContainer.addClass("instructions-container");
   board.append(instructionsContainer);
   showInstructions();
+  
+  u(".instructions-button").on("click", () => {
+    showInstructions();
+  });
 });
 
 function showInstructions() {
