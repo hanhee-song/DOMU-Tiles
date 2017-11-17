@@ -78,6 +78,24 @@ html {
   color: #ddd;
 }
 
+.subtitle {
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 10px;
+  text-align: center;
+  color: #7987af;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.subtitle a {
+  text-decoration: underline;
+}
+
+.subtitle a:hover {
+  color: #9ba7c9;
+}
+
 .instructions-button-container {
   width: 500px;
   position: relative;
@@ -97,14 +115,14 @@ html {
   line-height: 20px;
   font-size: 18px;
   font-weight: 900;
-  color: #4c5066;
-  border: 3px solid #4c5066;
+  color: #222;
+  border: 3px solid #222;
   border-radius: 50%;
 }
 
 .instructions-button:hover {
-  color: #7987af;
-  border: 3px solid #7987af;
+  color: #555;
+  border: 3px solid #555;
 }
 
 .instructions-container {
@@ -194,7 +212,7 @@ html {
   padding-top: 10px;
   display: flex;
   justify-content: space-between;
-  color: #7987af;
+  color: #9ba7c9;
   font-size: 18px;
   line-height: 20px;
 }
